@@ -1,8 +1,41 @@
 <html>
 <head>
   <title>Eckheart</title>
+  <style>
+    @keyframes wobble {
+      from {
+        transform: rotateZ(0deg);
+      }
+      20% {
+        transform: rotateZ(-10deg) translateX(-5%) translateY(5%);
+      }
+      40% {
+        transform: rotateZ(-20deg) translateX(-10%) translateY(-5%);
+      }
+      60% {
+        transform: rotateZ(10deg) translateX(5%) translateY(5%);
+      }
+      80% {
+        transform: rotateZ(20deg) translateX(10%) translateY(-5%);
+      }
+      100% {
+        transform: rotateZ(0deg);
+      }
+    }
+
+    #logo {
+      will-change: transform;
+      animation-name: wobble;
+      animation-duration: 0.4s;
+      animation-iteration-count: 3;
+      animation-fill-mode: backwards;
+      display: block;
+      margin: auto;
+      width: 50%;
+    }
+  </style>
 </head>
 <body>
-  <img style="display: block; margin: auto; width: 50%;" src="eckheart_logo.png"/>
+  <img id="logo" src="eckheart_logo.png"/>
 </body
 </html>
