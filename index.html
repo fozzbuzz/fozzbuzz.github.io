@@ -23,6 +23,41 @@
       }
     }
 
+		.reveal-text {
+			display: inline-block;
+			color: #1a1a1a;
+
+			-webkit-mask-image:
+				linear-gradient(to right, black, transparent),
+				linear-gradient(to left, black, transparent);
+			mask-image:
+				linear-gradient(to right, black 80%, transparent),
+				linear-gradient(to left, black 80%, transparent);
+
+			-webkit-mask-repeat: no-repeat, no-repeat;
+			mask-repeat: no-repeat, no-repeat;
+
+			-webkit-mask-position: left, right;
+			mask-position: left, right;
+
+			-webkit-mask-size: 0% 100%, 0% 100%;
+			mask-size: 0% 100%, 0% 100%;
+
+			animation: reveal-both-ends 1.4s ease-out forwards;
+		}
+
+		@keyframes reveal-both-ends {
+			0% {
+				-webkit-mask-size: 0% 100%, 0% 100%;
+				mask-size: 0% 100%, 0% 100%;
+			}
+			100% {
+				-webkit-mask-size: 55% 100%, 55% 100%;
+				mask-size: 55% 100%, 55% 100%;
+			}
+		}
+
+
     #logo {
       will-change: transform;
       animation-name: wobble;
@@ -33,9 +68,18 @@
       margin: auto;
       width: 50%;
     }
+
+    .site {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   </style>
 </head>
 <body>
   <img id="logo" src="eckheart_logo.png"/>
+  <div>
+    <a class="reveal-text site" href="https://github.com/fozzbuzz">https://github.com/fozzbuzz</a>
+  </div>
 </body
 </html>
